@@ -22,7 +22,7 @@ const Signup = (props) => {
     e.preventDefault();
 
     const {name , email , password} = credentials
-    axios.post('https://plant-shop-okau.onrender.com/userroute/users', {
+    axios.post('https://plant-shop-production.up.railway.app/userroute/users', {
       name:name,
     email:email,
     password:password
