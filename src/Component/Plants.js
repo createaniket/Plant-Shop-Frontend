@@ -1,6 +1,8 @@
 import React, { useContext , useEffect} from 'react'
 import ProductContext from '../Context/ProductContext'
+import Categories from './Categories'
 import PlantItems from './plantItems'
+// import Qoute from './Qoute'
 
 const Plants = () => {
 
@@ -9,6 +11,7 @@ const Plants = () => {
     const { products , GetPlants} = context
     useEffect(() => {
       GetPlants()
+      // document.body.style.background = "red";
       // eslint-disable-next-line
   }, [])
 
@@ -16,14 +19,20 @@ const Plants = () => {
 
   console.log("ye saaarereeeeeee productssssss" , products)
   return (
-    <div>
+
+
+    <>
+        < Categories/>
+
+    <div style={{ backgroundColor:"rgb(208 217 217)" , height:"100vh" }}>
+      
       
 < div className='container'  > 
-     <h2  style={{ transform: "translateX(49vh)" , margin : "10px"}}> Plants To Get Home </h2>
+     <h2  className='nnnn' style={{ display:"flex", justifyContent:"center"  ,padding:"10px"}}>Plants To Get Home </h2>
 
     
 
-     < div className='row' >
+     < div className='row'>
 
 
                             {products.map( (product) => {
@@ -35,6 +44,9 @@ const Plants = () => {
     
      </div>
     </div>
+
+{/* <Qoute/> */}
+    </>
   )
 }
 

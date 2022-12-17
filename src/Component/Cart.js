@@ -1,11 +1,11 @@
 import React, { useEffect, useState} from 'react'
 import CartItems from './CartItems'
 import axios from 'axios'
-import { Link} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 
 
 const Cart = (props) => {
-// const navigate = useNavigate();
+const navigate = useNavigate();
   const cartinitial = []
   const neworder = []
   const onet = (null)
@@ -106,11 +106,38 @@ const Cart = (props) => {
 
 
 
+  const proceed = async() =>{
+
+    console.log("zxcghjkl;xdgcvhj")
+    const webapi = 'https://plant-shop-production.up.railway.app/order/place-order'
+
+    const token = localStorage.getItem('token')
+
+    console.log("pfnerifborf" , token)
+    // const response =
+     await axios.post( webapi,{}, {
+      headers: {
+        'Authorization': `Bearer ${token}` 
+      }
+    }).then( (response) =>{
+       console.log("wejdb  eubfj ekberjk", response.data.orderId)
+       const orderId = response.data.orderId
+       localStorage.setItem('orderid',orderId)
+
+       navigate('/payment')
+       
+      })
+    .catch( (error) => { console.log("eckberhfberj", error)})
+
+
+
+  }
+
   return (
     <>
 
 
-< div  className='in-between' style={{ margin:"2px" , display:"flex" , justifyContent: "space-around"}}>
+< div  className='in-between' style={{ margin:"2px" , display:"flex" , justifyContent: "space-around" , height:"100vh" , alignItems:"center"}}>
 
 
 
@@ -130,7 +157,7 @@ const Cart = (props) => {
 
 
 
-            <div className='left' style={{ width:"37vw",  backgroundColor:"#bbdee1" , color:"black", height:"46vh", border:"3px solid #5e7970 "}}>
+            <div className='left' style={{ width:"37vw",  backgroundColor:"#bbdee1" , color:"black", height:"46vh", border:"3px solid #5e7970 " , display:"flex", alignItems:"center"}}>
 
 
 < div className='pad mx-2 my-2'>
@@ -156,7 +183,7 @@ const Cart = (props) => {
                         <span>Checkout <i className="fas fa-long-arrow-alt-right ms-2"></i></span>
                       </div>
                     </button>
-                    <Link className='fas fa-long-arrow-alt-right ms-2' to='/placeorder' style={show}> Place Order</Link>
+                    <button type='button' className='btn btn-info btn-block btn-lg' onClick={proceed} style={show}> Place Order</button>
 </div>
 
 

@@ -21,8 +21,9 @@ const Signup = (props) => {
   const toSignUp = async(e) => {
     e.preventDefault();
 
-    const {email , password} = credentials
-    axios.post('https://plant-shop-production.up.railway.app/userroute/users', {
+    const {name , email , password} = credentials
+    axios.post('https://plant-shop-okau.onrender.com/userroute/users', {
+      name:name,
     email:email,
     password:password
     })
@@ -31,13 +32,13 @@ const Signup = (props) => {
       if(response.status === 201){
         localStorage.setItem('token', response.data.token)
         navigate('/')
-        props.ShowAlert("Account created successfully", "success")
+
+        // console.log("ofewoifhewo", response)
       }
       
     })
     .catch(function (error) {
-      props.ShowAlert(`some error occured reason - ${error}`, "danger")
-
+console.log(error)
     });
   }
 

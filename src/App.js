@@ -6,7 +6,6 @@ import Plants from "./Component/Plants";
 import Productdetail from "./Component/Productdetail";
 import ProductState from "./Context/ProductState";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Footer from "./Component/Footer";
 import Wishlist from "./Component/Wishlist"
 import Signup from "./Component/Signup";
 import Login from "./Component/Login";
@@ -14,6 +13,10 @@ import Alert from "./Component/Alert";
 import { useState } from "react";
 import Plcaeorder from "./Component/Plcaeorder";
 import About from "./Component/About";
+import Payment from './Component/Payment'
+
+// import Categories from "./Component/Categories";
+// import Banner from "./Component/Banner";
 
 
 
@@ -21,8 +24,6 @@ import About from "./Component/About";
 
 
 function App() {
-
-  // const cartid = useParams()
 
   const [alert , setAlert] = useState(null) 
 
@@ -47,11 +48,15 @@ function App() {
       <Router>
         <Navbar />
         <Alert alert={alert}/>
+        {/* <Banner/> */}
 
         <Routes>
           <Route path="/" element={<Plants />}></Route>
           <Route path="/cart" element={<Cart />}> </Route>
           <Route path="/about" element={<About />}> </Route>
+          <Route path="/payment" element={<Payment />}> </Route>
+
+
 
           <Route path="/category" element={<Category />}></Route>
           <Route path="/productdetail" element={<Productdetail showAlert={showAlert} />}></Route>
@@ -67,7 +72,6 @@ function App() {
 
         </Routes>
 
-        <Footer />
       </Router>
     </ProductState>
   );

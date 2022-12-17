@@ -5,7 +5,7 @@ const CartItems = (props) => {
     console.log("  props h item m ye", props.Product)
     const {quantity} = props.Product
     const {title , price , productimg} = props.Product.product
-    const NewImage = `https://plant-shop-production.up.railway.app/${productimg[0]}`
+    const NewImage = `https://plant-shop-okau.onrender.com/${productimg[0]}`
     
 
   return (

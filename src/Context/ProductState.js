@@ -18,6 +18,7 @@ const ProductState = (props) => {
       let webApiUrl = 'https://plant-shop-production.up.railway.app/product/get';
 
     const response =    await  axios.get(webApiUrl);
+    console.log("response from fetch all plants " , response)
     if(response.status === 200) {
       setProducts(response.data)
     }
