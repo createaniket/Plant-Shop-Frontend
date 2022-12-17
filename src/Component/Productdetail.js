@@ -22,28 +22,30 @@ const Productdetail = (props) => {
 
     const token =  localStorage.getItem('token')
 
-    console.log("yufyufiy" , token)
-              const response = await axios.post(webURL, {
-              product:productid
-            }, {
-              headers: {
-                'Authorization': `Bearer ${token}` 
-              }
-            })
+    if(localStorage.getItem('token')){
 
-            // await axios.post(webURL ,{  product:productid},{
-            //   headers:{
-            //     'Authorization': `Bearer ${token}`
-            //   }
 
-            // }).then( (response)=>{ console.log("response carrrrttt" , response)}).catch((error)=>{ 
-            //   console.log("response error" , error)
 
-            // })
-  
-            console.log("response from cart" , response)
+      const response = await axios.post(webURL, {
+        product:productid
+      }, {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+      })
 
-            props.showAlert(" Added to cart successfully", "success")
+
+      console.log("response from cart" , response)
+
+      props.showAlert(" Added to cart successfully", "success")
+
+
+    }else {
+    navigate('/login')
+
+    }
+
+             
 
     // navigate('/cart')
   }
@@ -51,17 +53,6 @@ const Productdetail = (props) => {
 
   const addtowishlist = async() => {
 
-
-  //   const wishlistUrl = 'https://plant-shop-production.up.railway.app/wishlist/add/6399363b3b111661e464e11c'
-  //   const token = localStorage.getItem('token')
-
-  //   // const response =
-  //    await axios.post(wishlistUrl, {
-  //   headers: {
-  //     'Authorization': `Bearer ${token}` 
-  //   }
-  // }).then( (response) =>{ console.log("oguifucc5000", response) }).catch( (e) => { console.log("eeeeeeeeeee", e)})
-  // // props.showAlert(" Added to Wishlist successfully", "success")
 
 
     navigate('/wishlist')
