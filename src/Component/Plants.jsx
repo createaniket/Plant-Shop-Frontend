@@ -24,7 +24,7 @@ const Plants = () => {
     <>
         < Categories/>
 
-    <div style={{ backgroundColor:"rgb(208 217 217)" , height:"100vh" }}>
+    <div style={{ backgroundColor:"rgb(208 217 217)" }}>
       
       
 < div className='container'  > 
