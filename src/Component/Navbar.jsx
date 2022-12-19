@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link , useNavigate } from 'react-router-dom'
+import myLogo from '../Assets/final logo yelow fullstack.png'
 
 const Navbar = () => {
 
@@ -48,7 +49,7 @@ const toLogout = () =>{
 <nav className="navbar navbar-expand-lg" style={{ background:"#417c14"}} >
   <div className="container-fluid">
     <Link className="navbar-brand" to="/">
-      Navbar
+      <img src={myLogo} alt=""  style={{width:"6vw"}}/>
     </Link>
     <button
       className="navbar-toggler"

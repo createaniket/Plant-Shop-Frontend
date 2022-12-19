@@ -12,7 +12,8 @@ const About = () => {
     <p class="card-text">The creator owner and designer of this fully functioning Plant App</p>
     <p> <strong> <bold> Thanks for visting here! any advice and suggestion are highly welcome!</bold></strong></p>
     <p> aniketpratapsingh19@gmail.com</p>
-        <a href="https://www.linkedin.com/in/aniket-pratap-singh-28669b193/" classname="btn btn-primary">Linkedin Profile</a>
+       
+        <a href="https://www.linkedin.com/in/aniket-pratap-singh-28669b193/" classname="btn btn-primary">Linked Profile</a>
   </div>
 </div>
     </div>
