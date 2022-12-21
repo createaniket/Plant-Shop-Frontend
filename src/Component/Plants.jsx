@@ -11,7 +11,6 @@ const Plants = () => {
     const { products , GetPlants} = context
     useEffect(() => {
       GetPlants()
-      // document.body.style.background = "red";
       // eslint-disable-next-line
   }, [])
 
