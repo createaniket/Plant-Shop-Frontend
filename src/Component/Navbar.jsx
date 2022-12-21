@@ -12,10 +12,10 @@ const toCart = () => {
 }
 
 
-const toWishlist = () => {
+// const toWishlist = () => {
 
-  navigate('/wishlist')
-}
+//   navigate('/wishlist')
+// }
 
 
 
@@ -78,7 +78,7 @@ const toLogout = () =>{
       </ul>
    
 
-      <i class="fa-sharp fa-solid fa-heart"  onClick={ () => {  toWishlist()}} style={{color:"red"}}></i>
+      {/* <i class="fa-sharp fa-solid fa-heart"  onClick={ () => {  toWishlist()}} style={{color:"red"}}></i> */}
       <i class="fa-solid fa-cart-shopping" style={{ margin:"1vw" , color:"white"}}   onClick={ () => {  toCart()}}></i>
 
       {/* < img src='https://i.pinimg.com/736x/df/01/80/df01803b2f9f76d3e662e105f773f7a1.jpg' to="/" alt='wishlist'  style={{height:"46px"}}/> */}

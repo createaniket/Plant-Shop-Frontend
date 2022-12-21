@@ -14,6 +14,7 @@ import { useState } from "react";
 import Plcaeorder from "./Component/Plcaeorder";
 import About from "./Component/About";
 import Payment from './Component/Payment'
+import Radium, { StyleRoot } from 'radium';
 
 // import Categories from "./Component/Categories";
 // import Banner from "./Component/Banner";
@@ -45,6 +46,8 @@ function App() {
  
   return (
     <ProductState>
+      <StyleRoot>
+
       <Router>
         <Navbar />
         <Alert alert={alert}/>
@@ -73,6 +76,7 @@ function App() {
         </Routes>
 
       </Router>
+      </StyleRoot>
     </ProductState>
   );
 }

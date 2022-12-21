@@ -1,5 +1,6 @@
 import React from 'react'
 import {useLocation, useNavigate} from 'react-router-dom';
+import { StyleRoot } from 'radium';
 import axios from 'axios';
 
 const Productdetail = (props) => {
@@ -50,27 +51,62 @@ const Productdetail = (props) => {
     // navigate('/cart')
   }
 
+  const style = {
+ 
+    // Adding media query..
+    '@media (max-width: 500px)': {
+      display: 'flex',
+      flexDirection:"column"
+    },
+    margin:"2px" , display:"flex" , justifyContent: "space-around", height:"100vh" , paddingTop:"10vh"
+  };
 
-  const addtowishlist = async() => {
+  const forpcstyle = {
+
+ // Adding media query..
+ '@media (min-width: 500px)': {
+  display: 'flex',
+  margin:"19px",
+  height:"73vh",
+  width:"60vw",
+},
+
+background:"red"
 
 
-
-    navigate('/wishlist')
   }
+
+  const styleforpcrightbox = {
+
+
+ // Adding media query..
+ '@media (min-width: 500px)': {
+  // display: 'flex',
+  margin:"19px",
+display:"inline-block" ,  transform:" translateY(3vh)" , maxWidth:"30vw" , marginLeft:"10vh" , padding:"4vw" , maxHeight:"60vh"
+
+},
+
+  }
+
   return (
 
     <>
     
     
+<StyleRoot>
 
 
-< div  className='in-between' style={{ margin:"2px" , display:"flex" , justifyContent: "space-around", height:"100vh" , paddingTop:"10vh"}}>
 
 
 
-    <div className='set' style={{ display:"inline-block" , margin:"5vh" , maxHeight:"54vh"}}>
+< div  className='in' style={style}>
+
+
+
+    <div className='set container' style={{ display:"inline-block",}}>
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-  <div className="carousel-inner" style={{ height:"45", width:"37vw"}}>
+  <div className="carousel-inner" style={forpcstyle}>
     <div className="carousel-item active">
       <img src={NewImage2} className="d-block w-100" alt="..." style={{border:"2px solid black" }}/>
     </div>
@@ -94,10 +130,10 @@ const Productdetail = (props) => {
 
 
 
-    < div className='righth' style={{   display:"inline-block" ,  transform:" translateY(5vh)"}}>
+    < div className='righth' style={styleforpcrightbox}>
 
 
-    <div className="card" style={{width: "28rem" , background:"#b6c2b6"}}>
+    <div className="card" style={{ background:"#b6c2b6"}}>
   <div className="card-body">
     <h5 className="card-title">{response.title}</h5>
     <p className="card-text">{response.description}</p>
@@ -111,7 +147,6 @@ const Productdetail = (props) => {
   {/* <a href="/wishlist" className="btn btn-primary" style={{ margin:"2vh"}}>Wishlist</a> */}
   <button className='btn'  style={{ margin:"2vh" , background:"#077707"}} onClick={ addtocart}>Add to cart </button>
 
-  <button className='btn' style={{ margin:"2vh" , background:"#077707"}} onClick={addtowishlist}>Add to Wishlist  </button>
 </div>
 
 
@@ -120,6 +155,7 @@ const Productdetail = (props) => {
     </div>
     </div>
 
+</StyleRoot>
     </>
 
   )

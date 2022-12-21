@@ -18,11 +18,16 @@ const Plants = () => {
 
 
   console.log("ye saaarereeeeeee productssssss" , products)
+
+
   return (
 
 
     <>
         < Categories/>
+
+        <styleRoot>
+
 
     <div style={{ backgroundColor:"rgb(208 217 217)" }}>
       
@@ -32,20 +37,21 @@ const Plants = () => {
 
     
 
-     < div className='row'>
+     < div className='row' style={{ display:"flex", justifyContent:"center"  ,}}>
 
 
                             {products.map( (product) => {
-
-                        return <PlantItems product={product} />
-
-                        })}
+                              
+                              return <PlantItems product={product} />
+                              
+                            })}
      </div>
     
      </div>
     </div>
 
 {/* <Qoute/> */}
+                            </styleRoot>
     </>
   )
 }
