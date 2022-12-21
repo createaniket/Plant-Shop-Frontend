@@ -89,7 +89,6 @@ background:"red"
 
  // Adding media query..
  '@media (min-width: 500px)': {
-  // display: 'flex',
   margin:"19px",
 display:"inline-block" ,  transform:" translateY(3vh)" , maxWidth:"30vw" , marginLeft:"10vh" , padding:"4vw" , maxHeight:"60vh"
 
