@@ -42,6 +42,8 @@ const Productdetail = (props) => {
 
 
     }else {
+      props.showAlert(" please login", "danger")
+
     navigate('/login')
 
     }
@@ -50,6 +52,12 @@ const Productdetail = (props) => {
 
     // navigate('/cart')
   }
+
+  const maindescription = response.description
+  function truncate(str, no_words) {
+    return str.split(" ").splice(0,no_words).join(" ");
+}
+
 
   const style = {
  
@@ -136,7 +144,7 @@ display:"inline-block" ,  transform:" translateY(3vh)" , maxWidth:"30vw" , margi
     <div className="card" style={{ background:"#b6c2b6"}}>
   <div className="card-body">
     <h5 className="card-title">{response.title}</h5>
-    <p className="card-text">{response.description}</p>
+    <p className="card-text">{truncate(maindescription, 35)}...</p>
     <h6 className="card-title"> ₹ {response.price}</h6>
 
     {/* <a href="/" className="btn btn-primary">Go somewhere</a> */}
