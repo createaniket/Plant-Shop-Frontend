@@ -1,6 +1,6 @@
 import React, { useContext , useState } from 'react'
 import ProductContext from '../Context/ProductContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
@@ -73,6 +73,11 @@ const Login = () => {
     </div>
       
     
+
+    <div className='container'>
+      <p>New Customer? <Link to="/signup"> Register</Link> </p>
+
+    </div>
     
         </div>
       )

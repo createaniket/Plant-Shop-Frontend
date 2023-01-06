@@ -14,7 +14,7 @@ import { useState } from "react";
 import Plcaeorder from "./Component/Plcaeorder";
 import About from "./Component/About";
 import Payment from './Component/Payment'
-import Radium, { StyleRoot } from 'radium';
+import Footer from "./Component/Footer.jsx";
 
 // import Categories from "./Component/Categories";
 // import Banner from "./Component/Banner";
@@ -46,7 +46,6 @@ function App() {
  
   return (
     <ProductState>
-      <StyleRoot>
 
       <Router>
         <Navbar />
@@ -55,9 +54,9 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Plants />}></Route>
-          <Route path="/cart" element={<Cart />}> </Route>
+          <Route path="/cart" element={<Cart showAlert={showAlert} />}> </Route>
           <Route path="/about" element={<About />}> </Route>
-          <Route path="/payment" element={<Payment />}> </Route>
+          <Route path="/payment" element={<Payment showAlert={showAlert} />}> </Route>
 
 
 
@@ -75,8 +74,8 @@ function App() {
 
         </Routes>
 
+        <Footer />
       </Router>
-      </StyleRoot>
     </ProductState>
   );
 }

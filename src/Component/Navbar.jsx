@@ -8,11 +8,6 @@ const Navbar = () => {
     navigate("/cart");
   };
 
-
-  const toSignup = () => {
-    navigate("/signup");
-  };
-
   const toLogin = () => {
     navigate("/login");
   };
@@ -57,37 +52,29 @@ const Navbar = () => {
               </li>
             </ul>
 
-            <i
-              class="fa-solid fa-cart-shopping"
-              style={{ margin: "1vw", color: "white" }}
-              onClick={() => {
+           <div className="cartcontext"   style={{paddingRight:"1vw"}} onClick={() => {
                 toCart();
-              }}
-            ></i>
-
-            {/* < img src='https://i.pinimg.com/736x/df/01/80/df01803b2f9f76d3e662e105f773f7a1.jpg' to="/" alt='wishlist'  style={{height:"46px"}}/> */}
+              }}>
+             <i
+              class="fa-solid fa-cart-shopping"
+              style={{paddingRight:"6px", color: "white" }}
+              
+              ></i><span className="carttext"   type="button" style={{  color:"white"}}>CART</span>
+              </div>
 
             {
               !localStorage.getItem("token") ? (
                 <div className="hide">
-                  <button
+                  <span
                     type="button"
                     className="nnn mx-1"
+                    style={{color:"white", paddingRight:"2vh"}}
                     onClick={() => {
                       toLogin();
                     }}
-                  >
-                    Login
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-primary mx-1"
-                    onClick={() => {
-                      toSignup();
-                    }}
-                  >
-                    Signup
-                  </button>
+                  ><i class="fa-solid fa-user mx-2"></i>
+                    SIGN IN
+                  </span>
                 </div>
               ) : (
                 <div class="dropdown-center">
@@ -95,8 +82,7 @@ const Navbar = () => {
                     class="btn btn-secondary dropdown-toggle"
                     type="button"
                     data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
+                    aria-expanded="false">
                     Person Name
                   </button>
                   <ul class="dropdown-menu" style={{minWidth:"inherit"}}>

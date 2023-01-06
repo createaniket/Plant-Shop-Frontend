@@ -1,5 +1,4 @@
 import React from 'react'
-import  { StyleRoot } from 'radium';
 
 
 const Categories = () => {
@@ -7,17 +6,17 @@ const Categories = () => {
   const nnnstyle = {
 
     
- // Adding media query..
- '@media (max-width: 500px)': {
-  // display: 'flex',
-  // margin:"19px",
-// display:"inline-block" ,  transform:" translateY(3vh)" , maxWidth:"30vw" , marginLeft:"10vh" , padding:"4vw" , maxHeight:"60vh"
 
 
 
-background:"pink" , maxHeight:"28vw"
+    '@media (max-width: 500px)': {
+
+
+
+
+background:"#aae1c54f" , maxHeight:"28vw"
 },
-background:"pink" , maxHeight:"28vh"
+background:"#aae1c54f" , maxHeight:"28vh"
 
 
 
@@ -25,7 +24,6 @@ background:"pink" , maxHeight:"28vh"
   }
   return (
 
-    <StyleRoot>
 
     <div className='nnn' style={nnnstyle}>
       
@@ -43,7 +41,6 @@ background:"pink" , maxHeight:"28vh"
 
       </span>
     </div>
-    </StyleRoot>
   )
 }
 

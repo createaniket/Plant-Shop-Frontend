@@ -29,9 +29,25 @@ const navigate = useNavigate();
     }
   const Products = cartitem
   useEffect(() => {
-    GetCart()
+
+    if(localStorage.getItem('token')){
+
+
+      GetCart()
+
+    }
+
+    if(cartitem.length === 0){
+
+
+      props.showAlert("No items in your cart right now", "success")
+    }
+
+
     // eslint-disable-next-line
 }, [])
+
+
   const Checkoutbtn = async() => {
   const webapi = 'https://plant-shop-production.up.railway.app/order/checkout'
   const token = localStorage.getItem('token')

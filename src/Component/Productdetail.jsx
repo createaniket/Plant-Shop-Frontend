@@ -1,6 +1,5 @@
 import React from 'react'
 import {useLocation, useNavigate} from 'react-router-dom';
-import { StyleRoot } from 'radium';
 import axios from 'axios';
 
 const Productdetail = (props) => {
@@ -101,7 +100,6 @@ display:"inline-block" ,  transform:" translateY(3vh)" , maxWidth:"30vw" , margi
     <>
     
     
-<StyleRoot>
 
 
 
@@ -146,12 +144,10 @@ display:"inline-block" ,  transform:" translateY(3vh)" , maxWidth:"30vw" , margi
     <p className="card-text">{truncate(maindescription, 35)}...</p>
     <h6 className="card-title"> ₹ {response.price}</h6>
 
-    {/* <a href="/" className="btn btn-primary">Go somewhere</a> */}
 
 
   </div>
-  {/* <a href="/" className="btn btn-primary" style={{ margin:"2vh"}}>Add to Cart</a> */}
-  {/* <a href="/wishlist" className="btn btn-primary" style={{ margin:"2vh"}}>Wishlist</a> */}
+
   <button className='btn'  style={{ margin:"2vh" , background:"#077707"}} onClick={ addtocart}>Add to cart </button>
 
 </div>
@@ -162,7 +158,6 @@ display:"inline-block" ,  transform:" translateY(3vh)" , maxWidth:"30vw" , margi
     </div>
     </div>
 
-</StyleRoot>
     </>
 
   )

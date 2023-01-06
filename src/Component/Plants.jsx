@@ -16,19 +16,16 @@ const Plants = () => {
 
 
 
-  console.log("ye saaarereeeeeee productssssss" , products)
-
-
   return (
 
 
     <>
         < Categories/>
 
-        <styleRoot>
+       
 
 
-    <div style={{ backgroundColor:"rgb(208 217 217)" }}>
+    <div style={{ backgroundColor:"#ecf4f4" }}>
       
       
 < div className='container'  > 
@@ -50,7 +47,6 @@ const Plants = () => {
     </div>
 
 {/* <Qoute/> */}
-                            </styleRoot>
     </>
   )
 }
