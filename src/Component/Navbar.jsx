@@ -14,9 +14,12 @@ const Navbar = () => {
 
   const toLogout = () => {
     localStorage.clear("token");
+    localStorage.clear("personame");
     navigate("/login");
   };
 
+
+  const PersonName = localStorage.getItem('personame')
   return (
     <div>
       <nav
@@ -24,9 +27,7 @@ const Navbar = () => {
         style={{ background: "#417c14" }}
       >
         <div className="container-fluid">
-          {/* <Link className="navbar-brand" to="/">
-      <img src={myLogo} alt=""  style={{width:"6vw"}}/>
-    </Link> */}
+     
           <button
             className="navbar-toggler"
             type="button"
@@ -68,7 +69,7 @@ const Navbar = () => {
                   <span
                     type="button"
                     className="nnn mx-1"
-                    style={{color:"white", paddingRight:"2vh"}}
+                    style={{color:"white", paddingRight:"3vw"}}
                     onClick={() => {
                       toLogin();
                     }}
@@ -77,27 +78,28 @@ const Navbar = () => {
                   </span>
                 </div>
               ) : (
-                <div class="dropdown-center">
-                  <button
-                    class="btn btn-secondary dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Person Name
-                  </button>
-                  <ul class="dropdown-menu" style={{minWidth:"inherit"}}>
-                    <li>
-                      <a class="dropdown-item" href="/">
-                        Profile
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="/" onClick={toLogout}>
-                        SIGN OUT
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <div className="dropdown-center">
+                <button
+                  className="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  {PersonName}
+                </button>
+                <ul className="dropdown-menu" style={{minWidth:"inherit"}}>
+                  <li>
+                    <Link className="dropdown-item" to="/profile">
+                      Profile
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/login" onClick={toLogout}>
+                      Logout
+                    </Link>
+                  </li>
+                </ul>
+              </div>
               )
 
               //  < button type='button' className='nnn mx-1' onClick={ () => { toLogout()}}>Logout</button>

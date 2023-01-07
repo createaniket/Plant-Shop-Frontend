@@ -81,7 +81,7 @@ const navigate = useNavigate();
     .catch( (error) => { console.log("eckberhfberj", error)})
   }
   return (
-    <>
+    <div className='fullcart' style={{height:"100vh"}}>
 < div  className='in-between' style={{ margin:"2px" , display:"flex" , justifyContent: "space-around" , height:"100vh" , alignItems:"center"}}>
 < div className='right' >
 { Products.map( (Product) => {
@@ -115,7 +115,7 @@ const navigate = useNavigate();
 </div>
 </div>
 </div>
-    </>
+    </div>
   )
 }
 
