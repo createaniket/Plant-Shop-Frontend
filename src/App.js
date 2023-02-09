@@ -1,5 +1,6 @@
 import "./App.css";
-import Cart from "./Component/Cart";
+import Maincart from "./Component/Maincart";
+
 import Category from "./Component/Category";
 import Navbar from "./Component/Navbar";
 import Plants from "./Component/Plants";
@@ -50,7 +51,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Plants />}></Route>
-          <Route path="/cart" element={<Cart showAlert={showAlert} />}> </Route>
+          <Route path="/cart" element={<Maincart showAlert={showAlert} />}> </Route>
           <Route path="/about" element={<About />}> </Route>
           <Route path="/payment" element={<Payment showAlert={showAlert} />}> </Route>
 
