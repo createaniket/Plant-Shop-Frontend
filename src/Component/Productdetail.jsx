@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
+import "./Productdetails.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Productdetails.css";
 
 
 
