@@ -13,12 +13,12 @@ const PlantItems = (props) => {
   }
   return (
 <>
-            <div classname="card" onClick={ () =>{sendtodetail()}} style={{width: "18rem" ,  border:"1px solid  gray" , maxHeight:"78vh" , margin:"19px" , borderRadius:"10px", backgroundColor:"white"}}>
-             <img src={NewImage} class="img-thumbnail" alt="Cinque Terre"></img>
+            <div classname="card" onClick={ () =>{sendtodetail()}} style={{width: "25rem" ,  border:"1px solid gray" , height:"51vh" , margin:"19px" , borderRadius:"10px", backgroundColor:"white"}}>
+             <img src={NewImage} class="img-thumbnail" alt="Cinque Terre" style={{height:"37vh" , border:"0"}}></img>
             <div classname="card-body" >
                 <h5 classname="card-title" style={{ transform: "translateX(10%)"}}>{title}</h5>
                 <p classname="card-text"style={{ transform: "translateX(3%)"}}>{maindesc}...</p>
-                <p classname="card-text"style={{ transform: "translateX(20%)" , color:"red"}}> ₹ {price}</p>
+                <p classname="card-text"style={{ transform: "translateX(10%)" , color:"#100f0f", fontSize:"150%"}}> Rs. {price}</p>
             </div>
             </div>
 </>

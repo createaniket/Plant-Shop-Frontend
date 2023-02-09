@@ -78,7 +78,7 @@ const Productdetail = (props) => {
   width:"60vw",
 },
 
-background:"red"
+// background:"red"
 
 
   }
@@ -122,9 +122,9 @@ display:"inline-block" ,  transform:" translateY(3vh)" , maxWidth:"30vw" , margi
       <img src={NewImage3} className="d-block w-100" alt="..." style={{ border:"2px solid black"}}/>
     </div>
   </div>
-  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" >
     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Previous</span>
+    <span className="visually-hidden" >Previous</span>
   </button>
   <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
     <span className="carousel-control-next-icon" aria-hidden="true"></span>

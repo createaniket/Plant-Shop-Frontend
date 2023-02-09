@@ -1,6 +1,6 @@
 import React, { useContext , useEffect} from 'react'
 import ProductContext from '../Context/ProductContext'
-import Categories from './Categories'
+// import Categories from './Categories'
 import PlantItems from './plantItems'
 // import Qoute from './Qoute'
 
@@ -20,7 +20,7 @@ const Plants = () => {
 
 
     <>
-        < Categories/>
+        {/* < Categories/> */}
 
        
 
