@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Productdetails.css";
 
-import ReactImageMagnify from "react-image-magnify";
+
 
 
 const Productdetail = (props) => {
@@ -137,7 +137,8 @@ const Productdetail = (props) => {
             </div>
 
             <div className="left_2">
-              <ReactImageMagnify
+              <img src={img} alt="" />
+              {/* <ReactImageMagnify
                 {...{
                   smallImage: {
                     alt: "Product Image",
@@ -154,7 +155,7 @@ const Productdetail = (props) => {
                   //   height:'200%'
                   // }
                 }}
-              />
+              /> */}
 
               {/* // <img src={img} alt="" /> */}
             </div>
