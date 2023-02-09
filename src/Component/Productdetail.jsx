@@ -5,6 +5,7 @@ import "./Productdetails.css";
 
 import ReactImageMagnify from "react-image-magnify";
 
+
 const Productdetail = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
