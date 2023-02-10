@@ -1,9 +1,9 @@
 import React, {useEffect, useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 const Maincart = (props) => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const cartinitial = []
     const neworder = []
 
@@ -28,6 +28,13 @@ const Maincart = (props) => {
      
       }
     const Products = cartitem
+
+    console.log("wertyuiopasdfghklcvbnmsdfghjkertyu" , Products)
+
+
+
+
+
     useEffect(() => {
   
       if(localStorage.getItem('token')){
@@ -87,7 +94,11 @@ const Maincart = (props) => {
 
     },3000)
 
-    const proceed = async() =>{
+
+
+
+
+    const PlaceOrder = async() =>{
         const webapi = 'https://plant-shop-production.up.railway.app/order/place-order'
         const token = localStorage.getItem('token')
         console.log("jikksksksksksksksksksksksksksksksksksskskskskskskksks", token)
@@ -96,13 +107,50 @@ const Maincart = (props) => {
             'Authorization': `Bearer ${token}` 
           }
         }).then( (response) =>{
+          console.log("asdfevhewvhdvewjverfverhvrehverkv", response)
            const orderId = response.data.orderId
            localStorage.setItem('orderid',orderId)
-           navigate('/payment')
+           RazorpayHadler();
+          //  navigate('/payment')
           })
         .catch( (error) => { console.log("eckberhfberj", error)})
       }
+
+
+
+
+
+
+
+            const RazorpayHadler  = () => {
+
+
+              console.log("razpoery  callll   kiya kiya kiya kiyakiya hhhhhhh")
+              const options = {
+
+                key:"rzp_test_9L9Q22m1UJ7UA4",
+                amount:order.amountToBePaid,
+                order_id:localStorage.getItem('orderid'),
+                name:"Patch Plants",
+                description:"This is the only test mode of payment",
+                handler:{
+                  function (response){
+
+                    console.log("This is the response from Razorpay", response)
+                  } 
+                }
+              }
+
+              const rzp = new window.Razorpay(options)
+              rzp.open()
+
+      
+      }
+
   
+
+
+
   return (
     <div>
       
@@ -154,11 +202,6 @@ const Maincart = (props) => {
                   title="Remove item">
                   <i className="fas fa-trash"></i>
                 </button>
-                {/* <button type="button" className="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                  title="Move to the wish list">
-                  <i className="fas fa-heart"></i>
-                </button> */}
-                {/* <!-- Data --> */}
               </div>
 
               <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
@@ -199,7 +242,6 @@ const Maincart = (props) => {
 
 
 
-
                         </div>
 
                     })
@@ -207,6 +249,10 @@ const Maincart = (props) => {
         
            
            
+{/* 
+        <button type="button" className="btn btn-primary btn-lg btn-block" onClick={proceed} >
+              Proceed to checkout
+            </button> */}
 
    
           </div>
@@ -261,8 +307,8 @@ const Maincart = (props) => {
               </li>
             </ul>
 
-            <button type="button" className="btn btn-primary btn-lg btn-block" onClick={proceed} >
-              Go to checkout
+            <button type="button" className="btn btn-primary btn-lg btn-block" onClick={PlaceOrder} >
+              Pay now
             </button>
           </div>
         </div>
