@@ -14,10 +14,10 @@ import Alert from "./Component/Alert";
 import { useState } from "react";
 import Plcaeorder from "./Component/Plcaeorder";
 import About from "./Component/About";
-import Profile from "./Component/Profile";
 
 import Payment from './Component/Payment'
 import Footer from "./Component/Footer.jsx";
+import UserProfile from "./Component/UserProfile";
 
 
 
@@ -63,7 +63,8 @@ function App() {
           <Route path="/signup" element={<Signup showAlert={showAlert} />}></Route>
           <Route path="/login" element={<Login showAlert={showAlert} />}></Route>
           <Route path="/placeorder" element={<Plcaeorder showAlert={showAlert} />}></Route>
-          <Route path="/profile" element={<Profile showAlert={showAlert} />}></Route>
+          <Route path="/profile" element={<UserProfile showAlert={showAlert} />}></Route>
+
 
 
           {/* <Route path="/cart" element={<Login />}></Route> */}

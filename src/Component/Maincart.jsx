@@ -8,6 +8,9 @@ const Maincart = (props) => {
   const cartinitial = [];
   const neworder = [];
 
+  const [show , setShow] = useState('')
+  const [hide , setHide] = useState('none')
+
   const [cartitem, setCartitem] = useState(cartinitial);
 
   const [order, setOrder] = useState(neworder);
@@ -122,16 +125,13 @@ const Maincart = (props) => {
       }
     );
     if (response.data.success === true) {
-      // console.log("data tresdet ete te et ete t " , response.data.order)
       setOrder(response.data.order);
+      setHide('')
+      setShow('none')
     }
   };
 
-  setTimeout(() => {
-    if (Products.length !== 0) {
-      Checkoutbtn();
-    }
-  }, 3000);
+
 
   const PlaceOrder = async () => {
     const webapi =
@@ -176,8 +176,8 @@ const Maincart = (props) => {
   };
 
   return (
-    <div>
-      <section className="h-100 gradient-custom">
+    <div style={{height:"80vh"}}>
+      <section className="h-100" >
         <div className="container py-5">
           <div className="row d-flex justify-content-center my-4">
             <div className="col-md-8">
@@ -288,27 +288,15 @@ const Maincart = (props) => {
                       </div>
                     );
                   })}
-
-                  {/* 
-        <button type="button" className="btn btn-primary btn-lg btn-block" onClick={proceed} >
-              Proceed to checkout
-            </button> */}
-                  {/* <button
-                    type="button"
-                    className="btn btn-danger btn-sm me-1 mb-2"
-                    onClick={ClearCart}
-                  >
-                    <i
-                      className="fas fa-trash"
-                      style={{ fontFeatureSettings: "smcp  zero" }}
-                    >
-                      {" "}
-                      Clear Cart
-                    </i>
-                  </button> */}
                 </div>
+                <button className="btn btn-primary btn-lg btn-block" onClick={Checkoutbtn} style={{display:`${show}`}}> Proceed to checkout</button>
+
               </div>
-              <div className="card mb-4">
+
+
+
+
+              <div className="card mb-4" >
                 <div className="card-body">
                   <p>
                     <strong>Expected shipping delivery</strong>
@@ -342,7 +330,7 @@ const Maincart = (props) => {
                 </div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{display:`${hide}`}}>
               <div className="card mb-4">
                 <div className="card-header py-3">
                   <h5 className="mb-0">Summary</h5>

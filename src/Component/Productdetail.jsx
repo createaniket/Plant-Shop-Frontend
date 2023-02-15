@@ -53,6 +53,36 @@ const Productdetail = (props) => {
 
   const productid = location.state.response[0]._id;
 
+  const BuyNow = async () => {
+    const webURL = "https://plant-shop-production.up.railway.app/cart/";
+
+    const token = localStorage.getItem("token");
+
+    if (localStorage.getItem("token")) {
+      const response = await axios.post(
+        webURL,
+        {
+          product: productid,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      console.log("response from cart", response);
+      navigate('/cart')
+
+    } else {
+      props.showAlert(" please login", "danger");
+
+      navigate("/login");
+    }
+
+    // navigate('/cart')
+  };
+
   const addtocart = async () => {
     const webURL = "https://plant-shop-production.up.railway.app/cart/";
 
@@ -168,7 +198,7 @@ const Productdetail = (props) => {
           <span> Rs. {response.price}</span>
 
           <div>
-            <button className="buy">Buy now</button>
+            <button className="buy" onClick={BuyNow}>Buy now</button>
             <button className="addcart" onClick={addtocart}>
               {" "}
               Add to cart
