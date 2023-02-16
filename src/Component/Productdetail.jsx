@@ -72,7 +72,7 @@ const Productdetail = (props) => {
       );
 
       console.log("response from cart", response);
-      navigate('/cart')
+      navigate("/cart")
 
     } else {
       props.showAlert(" please login", "danger");
@@ -123,30 +123,6 @@ const Productdetail = (props) => {
     },
   };
 
-  // const forpcstyle = {
-  //   // Adding media query..
-  //   "@media (min-width: 500px)": {
-  //     display: "flex",
-  //     margin: "19px",
-  //     height: "73vh",
-  //     width: "60vw",
-  //   },
-
-  //   // background:"red"
-  // };
-
-  // const styleforpcrightbox = {
-  //   // Adding media query..
-  //   "@media (min-width: 500px)": {
-  //     margin: "19px",
-  //     display: "inline-block",
-  //     transform: " translateY(3vh)",
-  //     maxWidth: "30vw",
-  //     marginLeft: "10vh",
-  //     padding: "4vw",
-  //     maxHeight: "60vh",
-  //   },
-  // };
 
   return (
     <div className="settingforfooter">
@@ -168,26 +144,7 @@ const Productdetail = (props) => {
 
             <div className="left_2">
               <img src={img} alt="" />
-              {/* <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    alt: "Product Image",
-                    isFluidWidth: true,
-                    src: img,
-                  },
-                  largeImage: {
-                    src: img,
-                    width: 900,
-                    height: 700,
-                  },
-                  // enlargedImageContainerDimensions:{
-                  //   width:'150%',
-                  //   height:'200%'
-                  // }
-                }}
-              /> */}
 
-              {/* // <img src={img} alt="" /> */}
             </div>
           </div>
         </div>
@@ -195,9 +152,9 @@ const Productdetail = (props) => {
           <h2>About {response.title}</h2>
           <p>{maindescription}</p>
 
-          <span> Rs. {response.price}</span>
+          <span> $ {response.price}</span>
 
-          <div>
+          <div className="btns">
             <button className="buy" onClick={BuyNow}>Buy now</button>
             <button className="addcart" onClick={addtocart}>
               {" "}

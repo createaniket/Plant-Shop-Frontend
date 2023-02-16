@@ -58,3 +58,24 @@
         font-size: 300%;
         margin: 4vw;
     }
+
+    @media only screen and (max-width: 600px){
+
+
+        .maindivforprofile{
+            display: flex;
+            flex-direction: column;border: 2px solid green;
+         
+        }
+        .forpic{
+
+            width: 98vw;
+            margin: 1vw;
+        }
+
+        .formdiv {
+
+            max-width: 85vw;
+            margin-left: 5vw;
+        }
+    }

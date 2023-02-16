@@ -113,7 +113,7 @@ console.log(error)
   console.log("ckh sevcks", ordersLength);
 
   return (
-    <div class="vh-100">
+    <div className="maiprofile">
       <div className="maindivforprofile">
         <div class="gradientmain forpic text-center text-white">
           <img

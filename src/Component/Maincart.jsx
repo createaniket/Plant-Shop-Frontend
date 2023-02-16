@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import './Maincart.css'
 // import { useNavigate } from 'react-router-dom'
 
 const Maincart = (props) => {
@@ -176,11 +177,11 @@ const Maincart = (props) => {
   };
 
   return (
-    <div style={{height:"80vh"}}>
-      <section className="h-100" >
+    <div className="maincartcontent">
+      <section className="h-100 " >
         <div className="container py-5">
           <div className="row d-flex justify-content-center my-4">
-            <div className="col-md-8">
+            <div className="col-md-8 maincarthai">
               <div className="card mb-4">
                 <div className="card-header py-3">
                   <h5 className="mb-0">Cart - {`${Products.length}`} items</h5>

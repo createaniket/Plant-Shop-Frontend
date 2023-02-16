@@ -28,7 +28,7 @@ const Login = () => {
       if(response.status === 200){
         localStorage.setItem('token', response.data.token)
         localStorage.setItem('personame', response.data.user.name)
-        localStorage.setItem('personemail', response.data.user.email)
+
 
         setDone(true)
         navigate('/')

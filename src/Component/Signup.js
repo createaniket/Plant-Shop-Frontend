@@ -27,7 +27,7 @@ const Signup = (props) => {
 
     setDone(false)
     const {name , email , password} = credentials
-                      await axios.post('https://plant-shop-okau.onrender.com/userroute/users', {
+                      await axios.post('https://plant-shop-production.up.railway.app/userroute/users', {
                           name:name,
                         email:email,
                         password:password
