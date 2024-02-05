@@ -15,7 +15,7 @@ const ProductState = (props) => {
 
 
     const GetPlants = async() => {
-      let webApiUrl = 'https://plant-shop-production.up.railway.app/product/get';
+      let webApiUrl = 'https://natureverse.onrender.com/product/get';
 
     const response =    await  axios.get(webApiUrl);
     console.log("response from fetch all plants " , response)

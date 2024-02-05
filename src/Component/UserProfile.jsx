@@ -32,7 +32,7 @@ const UserProfile = () => {
   const ToUpdate = async (e) => {
     e.preventDefault();
 
-    const webURL = "https://plant-shop-production.up.railway.app/userroute/users/me"
+    const webURL = "https://natureverse.onrender.com/userroute/users/me"
     const token = localStorage.getItem('token')
 
     const {name , email} = credentials
@@ -60,7 +60,7 @@ console.log(error)
   // console.log("jcbjdbc", orderReceipt);
 
   const GetOrders = async () => {
-    const webURL = "https://plant-shop-production.up.railway.app/order/getorders";
+    const webURL = "https://natureverse.onrender.com/order/getorders";
 
     const token = localStorage.getItem("token");
 
@@ -79,7 +79,7 @@ console.log(error)
 
   const GetMe = async() => {
 
-    const webURL = "https://plant-shop-production.up.railway.app/userroute/users/me"
+    const webURL = "https://natureverse.onrender.com/userroute/users/me"
 
     const token = localStorage.getItem("token");
 
@@ -231,7 +231,7 @@ console.log(error)
                         <div class="row">
                           <div class="col-md-2">
                             <img
-                              src={`https://plant-shop-production.up.railway.app/${element.product.productimg[0]}`}
+                              src={`https://natureverse.onrender.com/${element.product.productimg[0]}`}
                               class="img-fluid"
                               alt="Phone"
                             />

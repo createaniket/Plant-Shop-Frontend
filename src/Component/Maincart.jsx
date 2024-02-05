@@ -19,7 +19,7 @@ const Maincart = (props) => {
   const GetCart = () => {
     const token = localStorage.getItem("token");
     const webURL =
-      "https://plant-shop-production.up.railway.app/cart/single-cart";
+      "https://natureverse.onrender.com/cart/single-cart";
     axios
       .get(webURL, {
         headers: {
@@ -52,7 +52,7 @@ const Maincart = (props) => {
   }, []);
 
   const DeleteCartItem = async (productid) => {
-    const webapi = `https://plant-shop-production.up.railway.app/cart/deleteCartItem/${productid}`;
+    const webapi = `https://natureverse.onrender.com/cart/deleteCartItem/${productid}`;
     const token = localStorage.getItem("token");
     await axios.post(
       webapi,
@@ -67,7 +67,7 @@ const Maincart = (props) => {
   };
 
   const IncreaseProductQuantity = async (productid) => {
-    const webapi = `https://plant-shop-production.up.railway.app/cart/increase/${productid}`;
+    const webapi = `https://natureverse.onrender.com/cart/increase/${productid}`;
     const token = localStorage.getItem("token");
     await axios.post(
       webapi,
@@ -82,7 +82,7 @@ const Maincart = (props) => {
   };
 
   const DecreaseProductQuantity = async (productid) => {
-    const webapi = `https://plant-shop-production.up.railway.app/cart/decrease/${productid}`;
+    const webapi = `https://natureverse.onrender.com/cart/decrease/${productid}`;
     const token = localStorage.getItem("token");
     await axios.post(
       webapi,
@@ -112,7 +112,7 @@ const Maincart = (props) => {
   // };
   const Checkoutbtn = async () => {
     const webapi =
-      "https://plant-shop-production.up.railway.app/order/checkout";
+      "https://natureverse.onrender.com/order/checkout";
     const token = localStorage.getItem("token");
     const response = await axios.post(
       webapi,
@@ -136,7 +136,7 @@ const Maincart = (props) => {
 
   const PlaceOrder = async () => {
     const webapi =
-      "https://plant-shop-production.up.railway.app/order/place-order";
+      "https://natureverse.onrender.com/order/place-order";
     const token = localStorage.getItem("token");
     await axios
       .post(
@@ -199,7 +199,7 @@ const Maincart = (props) => {
                               data-mdb-ripple-color="light"
                             >
                               <img
-                                src={`https://plant-shop-production.up.railway.app/${element.product.productimg[0]}`}
+                                src={`https://natureverse.onrender.com/${element.product.productimg[0]}`}
                                 className="w-100"
                                 alt="Blue Jeans Jacket"
                               />

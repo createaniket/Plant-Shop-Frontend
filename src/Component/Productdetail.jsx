@@ -16,15 +16,15 @@ const Productdetail = (props) => {
   const images = [
     {
       id: 1,
-      value: `https://plant-shop-production.up.railway.app/${response.productimg[0]}`,
+      value: `https://natureverse.onrender.com/${response.productimg[0]}`,
     },
     {
       id: 2,
-      value: `https://plant-shop-production.up.railway.app/${response.productimg[1]}`,
+      value: `https://natureverse.onrender.com/${response.productimg[1]}`,
     },
     {
       id: 3,
-      value: `https://plant-shop-production.up.railway.app/${response.productimg[2]}`,
+      value: `https://natureverse.onrender.com/${response.productimg[2]}`,
     },
   ];
 
@@ -54,7 +54,7 @@ const Productdetail = (props) => {
   const productid = location.state.response[0]._id;
 
   const BuyNow = async () => {
-    const webURL = "https://plant-shop-production.up.railway.app/cart/";
+    const webURL = "https://natureverse.onrender.com/cart/";
 
     const token = localStorage.getItem("token");
 
@@ -84,7 +84,7 @@ const Productdetail = (props) => {
   };
 
   const addtocart = async () => {
-    const webURL = "https://plant-shop-production.up.railway.app/cart/";
+    const webURL = "https://natureverse.onrender.com/cart/";
 
     const token = localStorage.getItem("token");
 
