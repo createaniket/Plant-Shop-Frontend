@@ -17,7 +17,6 @@ const Plants = () => {
 
   return (
     <>
-      {/* < Categories/> */}
 
       <div style={{ backgroundColor: "#ecf4f4" }}>
         <div className="container">
@@ -43,7 +42,6 @@ const Plants = () => {
         </div>
       </div>
 
-      {/* <Qoute/> */}
     </>
   );
 };
